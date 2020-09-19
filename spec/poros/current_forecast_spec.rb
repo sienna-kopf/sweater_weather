@@ -29,14 +29,14 @@ describe CurrentForecast do
     expect(current.sunrise).to eq(1600519516)
     expect(current.sunset).to be_a Integer
     expect(current.sunset).to eq(1600563710)
-    expect(current.temp).to be_a Float
-    expect(current.temp).to eq(288.44)
-    expect(current.feels_like).to be_a Float
-    expect(current.feels_like).to eq(284.71)
+    expect(current.temp).to be_a Integer
+    expect(current.temp).to eq(288)
+    expect(current.feels_like).to be_a Integer
+    expect(current.feels_like).to eq(285)
     expect(current.humidity).to be_a Integer
     expect(current.humidity).to eq(23)
-    expect(current.uvi).to be_a Float
-    expect(current.uvi).to each eq(7.04)
+    expect(current.uvi).to be_a Integer
+    expect(current.uvi).to eq(7)
     expect(current.visibility).to be_a Integer
     expect(current.visibility).to eq(10000)
     expect(current.main_description).to be_a String
