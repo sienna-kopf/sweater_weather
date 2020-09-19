@@ -94,10 +94,10 @@ RSpec.describe ForecastFacade do
         expect(response.dt).to be_a Integer
         expect(response.sunrise).to be_a Integer
         expect(response.sunset).to be_a Integer
-        expect(response.temp).to be_a Float
-        expect(response.feels_like).to be_a Float
+        expect(response.temp).to be_a Integer
+        expect(response.feels_like).to be_a Integer
         expect(response.humidity).to be_a Integer
-        expect(response.uvi).to be_a Float
+        expect(response.uvi).to be_a Integer
         expect(response.visibility).to be_a Integer
         expect(response.main_description).to be_a String
         expect(response.description).to be_a String
@@ -106,23 +106,23 @@ RSpec.describe ForecastFacade do
     end
     describe '#hourly_forecast' do
       it "instantiates a hourly forecast object with hourly forecast coming through as the payload" do
-        response = @facade.hourly_forecast
+        response = @facade.hourly_forecast[0]
 
         expect(response).to be_a HourlyForecast
         expect(response.dt).to be_a Integer
-        expect(response.temp).to be_a Float
+        expect(response.temp).to be_a Integer
         expect(response.icon).to be_a String
       end
     end
     describe '#daily_forecast' do
       it "instantiates a daily forecast object with daily forecast coming through as the payload" do
-        response = @facade.daily_forecast
+        response = @facade.daily_forecast[0]
 
         expect(response).to be_a DailyForecast
         expect(response.dt).to be_a Integer
-        expect(response.temp).to be_a Float
-        expect(response.min).to be_a Float
-        expect(response.max).to be_a Float
+        expect(response.temp).to be_a Integer
+        expect(response.temp_min).to be_a Integer
+        expect(response.temp_max).to be_a Integer
         expect(response.main_description).to be_a String
         expect(response.icon).to be_a String
       end

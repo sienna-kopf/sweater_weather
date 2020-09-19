@@ -43,6 +43,8 @@ RSpec.describe WeatherService do
         expect(response[:current][:weather][0]).to be_a Hash
         expect(response[:current][:weather][0]).to have_key :main
         expect(response[:current][:weather][0][:main]).to be_a String
+        expect(response[:current][:weather][0]).to have_key :description
+        expect(response[:current][:weather][0][:description]).to be_a String
         expect(response[:current][:weather][0]).to have_key :icon
         expect(response[:current][:weather][0][:icon]).to be_a String
 
