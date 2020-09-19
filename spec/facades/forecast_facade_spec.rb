@@ -100,6 +100,7 @@ RSpec.describe ForecastFacade do
         expect(response.uvi).to be_a Float
         expect(response.visibility).to be_a Integer
         expect(response.main_description).to be_a String
+        expect(response.description).to be_a String
         expect(response.icon).to be_a String
       end
     end
