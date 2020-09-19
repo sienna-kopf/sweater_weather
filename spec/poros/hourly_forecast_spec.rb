@@ -17,8 +17,8 @@ describe HourlyForecast do
     expect(hourly).to be_a HourlyForecast
     expect(hourly.dt).to be_a Integer
     expect(hourly.dt).to eq(1600520400)
-    expect(hourly.temp).to be_a Float
-    expect(hourly.temp).to eq(288.44)
+    expect(hourly.temp).to be_a Integer
+    expect(hourly.temp).to eq(288)
     expect(hourly.icon).to be_a String
     expect(hourly.icon).to eq("04d")
   end
