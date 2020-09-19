@@ -63,24 +63,25 @@ RSpec.describe WeatherService do
         expect(current_hour[:weather][0][:icon]).to be_a String
 
         expect(response[:daily]).to be_an Array
-        expect(response[:daily].size).to eq(7)
+        expect(response[:daily].size).to eq(8)
         current_day = response[:daily][0]
         expect(current_day).to be_a Hash
         expect(current_day).to have_key :dt
 
         expect(current_day).to have_key :temp
-        expect(current_temp[:temp]).to be_a Hash
-        expect(current_temp[:temp]).to have_key :min
-        expect(current_temp[:temp][:min]).to be_a Float
-        expect(current_temp[:temp]).to have_key :max
-        expect(current_temp[:temp][:max]).to be_a Float
+        expect(current_day[:temp]).to be_a Hash
+        expect(current_day[:temp]).to have_key :min
+        expect(current_day[:temp][:min]).to be_a Float
+        expect(current_day[:temp]).to have_key :max
+        expect(current_day[:temp][:max]).to be_a Float
 
         expect(current_day).to have_key :weather
-        expect(current_day[:weather]).to be_a Hash
-        expect(current_day[:weather]).to have_key :main
-        expect(current_day[:weather][:main]).to be_a String
-        expect(current_day[:weather]).to have_key :icon
-        expect(current_day[:weather][:icon]).to be_a String
+        expect(current_day[:weather]).to be_an Array
+        expect(current_day[:weather][0]).to be_a Hash
+        expect(current_day[:weather][0]).to have_key :main
+        expect(current_day[:weather][0][:main]).to be_a String
+        expect(current_day[:weather][0]).to have_key :icon
+        expect(current_day[:weather][0][:icon]).to be_a String
 
         # expect(current_day).to have_key :rain
         # expect(current_day).to have_key :snow
