@@ -25,12 +25,12 @@ describe DailyForecast do
     expect(daily).to be_a DailyForecast
     expect(daily.dt).to be_a Integer
     expect(daily.dt).to eq(1600538400)
-    expect(daily.temp).to be_a Float
-    expect(daily.temp).to eq(299.67)
-    expect(daily.min).to be_a Float
-    expect(daily.min).to eq(288.44)
-    expect(daily.max).to be_a Float
-    expect(daily.max).to eq(302.83)
+    expect(daily.temp).to be_a Integer
+    expect(daily.temp).to eq(300)
+    expect(daily.temp_min).to be_a Integer
+    expect(daily.temp_min).to eq(288)
+    expect(daily.temp_max).to be_a Integer
+    expect(daily.temp_max).to eq(303)
     expect(daily.main_description).to be_a String
     expect(daily.main_description).to eq("Rain")
     expect(daily.icon).to be_a String
