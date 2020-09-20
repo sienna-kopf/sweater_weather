@@ -9,6 +9,7 @@ RSpec.describe "Forecast Endpoint", type: :request do
         get "/api/v1/forecast?location=#{location}"
 
         expect(response).to be_successful
+        response.content_type == "application/json"
 
         complete_forecast = JSON.parse(response.body, symbolize_names: true)
 
