@@ -1,6 +1,6 @@
 class WeatherService
   def forecast(lat, lon)
-    to_json("/data/2.5/onecall?lat=#{lat}&lon=#{lon}&exclude=minutely")
+    to_json("/data/2.5/onecall?lat=#{lat}&lon=#{lon}&exclude=minutely&units=imperial")
   end
 
   private
