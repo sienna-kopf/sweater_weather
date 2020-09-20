@@ -95,96 +95,98 @@ RSpec.describe ForecastSerializer do
           DailyForecast.new(daily_forecast)
         end
 
-        forecast_payload = ForecastSerializer.new(current_forecast, hourly_forecast, daily_forecast).data_hash
+        weather = Weather.new(current_forecast, hourly_forecast, daily_forecast)
 
-        expect(forecast_payload).to be_a Hash
-        expect(forecast_payload).to have_key :data
-        expect(forecast_payload[:data]).to be_a Hash
-        expect(forecast_payload[:data]).to have_key :current_forecast
-        expect(forecast_payload[:data]).to have_key :hourly_forecast
-        expect(forecast_payload[:data]).to have_key :daily_forecast
+        forecast_payload = ForecastSerializer.new(weather).to_json
 
-        expect(forecast_payload[:data][:current_forecast]).to be_a Hash
-        expect(forecast_payload[:data][:current_forecast]).to have_key :type
-        expect(forecast_payload[:data][:current_forecast]).to have_key :attributes
+        response = JSON.parse(forecast_payload, symbolize_names: true)
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "dt"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["dt"]).to be_a Integer
+        expect(response).to be_a Hash
+        expect(response).to have_key :data
+        expect(response[:data]).to be_a Hash
+        expect(response[:data]).to have_key :id
+        expect(response[:data][:id]).to eq(nil)
+        expect(response[:data]).to have_key :type
+        expect(response[:data][:type]).to eq('forecast')
+        expect(response[:data]).to have_key :attributes
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "sunrise"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["sunrise"]).to be_a Integer
+        expect(response[:data][:attributes]).to be_a Hash
+        expect(response[:data][:attributes]).to have_key :current_forecast
+        expect(response[:data][:attributes]).to have_key :hourly_forecast
+        expect(response[:data][:attributes]).to have_key :daily_forecast
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "sunset"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["sunset"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to be_a Hash
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "temp"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["temp"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to have_key :dt
+        expect(response[:data][:attributes][:current_forecast][:dt]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "feels_like"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["feels_like"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to have_key :sunrise
+        expect(response[:data][:attributes][:current_forecast][:sunrise]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "humidity"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["humidity"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to have_key :sunset
+        expect(response[:data][:attributes][:current_forecast][:sunset]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "uvi"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["uvi"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to have_key :temp
+        expect(response[:data][:attributes][:current_forecast][:temp]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "visibility"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["visibility"]).to be_a Integer
+        expect(response[:data][:attributes][:current_forecast]).to have_key :feels_like
+        expect(response[:data][:attributes][:current_forecast][:feels_like]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "main_description"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["main_description"]).to be_a String
+        expect(response[:data][:attributes][:current_forecast]).to have_key :humidity
+        expect(response[:data][:attributes][:current_forecast][:humidity]).to be_a Integer
 
-        expect(forecast_payload[:data][:current_forecast][:attributes]).to have_key "icon"
-        expect(forecast_payload[:data][:current_forecast][:attributes]["icon"]).to be_a String
+        expect(response[:data][:attributes][:current_forecast]).to have_key :uvi
+        expect(response[:data][:attributes][:current_forecast][:uvi]).to be_a Integer
 
-        expect(forecast_payload[:data][:hourly_forecast]).to be_a Hash
-        expect(forecast_payload[:data][:hourly_forecast]).to have_key :type
-        expect(forecast_payload[:data][:hourly_forecast]).to have_key :attributes
+        expect(response[:data][:attributes][:current_forecast]).to have_key :visibility
+        expect(response[:data][:attributes][:current_forecast][:visibility]).to be_a Integer
 
-        expect(forecast_payload[:data][:hourly_forecast][:attributes]).to be_an Array
-        expect(forecast_payload[:data][:hourly_forecast][:attributes].size).to eq(3)
-        current_hour = forecast_payload[:data][:hourly_forecast][:attributes][0]
+        expect(response[:data][:attributes][:current_forecast]).to have_key :main_description
+        expect(response[:data][:attributes][:current_forecast][:main_description]).to be_a String
+
+        expect(response[:data][:attributes][:current_forecast]).to have_key :icon
+        expect(response[:data][:attributes][:current_forecast][:icon]).to be_a String
+
+        expect(response[:data][:attributes][:hourly_forecast]).to be_an Array
+        expect(response[:data][:attributes][:hourly_forecast].size).to eq(3)
+        current_hour = response[:data][:attributes][:hourly_forecast][0]
 
         expect(current_hour).to be_a Hash
-        expect(current_hour).to have_key "dt"
-        expect(current_hour["dt"]).to be_a Integer
+        expect(current_hour).to have_key :dt
+        expect(current_hour[:dt]).to be_a Integer
 
-        expect(current_hour).to have_key "temp"
-        expect(current_hour["temp"]).to be_a Integer
+        expect(current_hour).to have_key :temp
+        expect(current_hour[:temp]).to be_a Integer
 
-        expect(current_hour).to have_key "icon"
-        expect(current_hour["icon"]).to be_a String
+        expect(current_hour).to have_key :icon
+        expect(current_hour[:icon]).to be_a String
 
-        expect(forecast_payload[:data][:daily_forecast]).to be_a Hash
-        expect(forecast_payload[:data][:daily_forecast]).to have_key :type
-        expect(forecast_payload[:data][:daily_forecast]).to have_key :attributes
+        expect(response[:data][:attributes][:daily_forecast]).to be_an Array
+        expect(response[:data][:attributes][:daily_forecast].size).to eq(2)
+        current_day = response[:data][:attributes][:daily_forecast][0]
 
-        expect(forecast_payload[:data][:daily_forecast][:attributes]).to be_an Array
-        expect(forecast_payload[:data][:daily_forecast][:attributes].size).to eq(2)
-        current_day = forecast_payload[:data][:daily_forecast][:attributes][0]
         expect(current_day).to be_a Hash
 
-        expect(current_day).to have_key "dt"
-        expect(current_day["dt"]).to be_a Integer
+        expect(current_day).to have_key :dt
+        expect(current_day[:dt]).to be_a Integer
 
-        expect(current_day).to have_key "temp"
-        expect(current_day["temp"]).to be_a Integer
+        expect(current_day).to have_key :temp
+        expect(current_day[:temp]).to be_a Integer
 
-        expect(current_day).to have_key "temp_min"
-        expect(current_day["temp_min"]).to be_a Integer
+        expect(current_day).to have_key :temp_min
+        expect(current_day[:temp_min]).to be_a Integer
 
-        expect(current_day).to have_key "temp_max"
-        expect(current_day["temp_max"]).to be_a Integer
+        expect(current_day).to have_key :temp_max
+        expect(current_day[:temp_max]).to be_a Integer
 
-        expect(current_day).to have_key "main_description"
-        expect(current_day["main_description"]).to be_a String
+        expect(current_day).to have_key :main_description
+        expect(current_day[:main_description]).to be_a String
 
-        expect(current_day).to have_key "icon"
-        expect(current_day["icon"]).to be_a String
+        expect(current_day).to have_key :icon
+        expect(current_day[:icon]).to be_a String
 
-        expect(current_day).to have_key "rain"
-        expect(current_day).to have_key "snow"
+        expect(current_day).to have_key :rain
+        expect(current_day).to have_key :snow
       end
     end
   end

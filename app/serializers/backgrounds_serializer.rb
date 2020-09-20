@@ -1,19 +1,8 @@
 class BackgroundsSerializer
-  def initialize(image, location)
-    @image = image
-    @location = location
-  end
+  include FastJsonapi::ObjectSerializer
+  attributes :id, :image_url, :user_name, :user_url
 
-  def data_hash
-    {
-      data:
-      {
-        type: 'image',
-        location: @location,
-        image: {
-          attributes: @image.as_json
-        }
-      }
-    }
+  attribute :location do |background, params|
+    params[:location]
   end
 end
