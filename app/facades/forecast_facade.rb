@@ -12,6 +12,10 @@ class ForecastFacade
     @service.forecast(@lat, @lon)
   end
 
+  def weather
+    Weather.new(current_forecast, hourly_forecast, daily_forecast)
+  end
+
   def current_forecast
     current_forecast_info = response_forecast[:current]
 
