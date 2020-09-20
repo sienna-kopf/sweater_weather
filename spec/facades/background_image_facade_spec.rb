@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe BackgroundImageFacade do
   describe 'instance methods' do
     before :each do
+      location = "denver"
       @facade = BackgroundImageFacade.new(location)
     end
     describe '#response_image' do
@@ -30,7 +31,7 @@ RSpec.describe BackgroundImageFacade do
       it "instantiates an image object from a random one of the 5 responses" do
         response = @facade.background_image
 
-        expect(response).to be_an Image
+        expect(response).to be_an BackgroundImage
         expect(response.id).to be_an Integer
         expect(response.image_url).to be_an String
         expect(response.user_name).to be_an String
