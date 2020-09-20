@@ -6,8 +6,7 @@ ruby '2.5.3'
 gem 'simplecov', require: false, group: :test
 gem 'figaro'
 gem 'faraday'
-
-# gem 'fast_jsonapi'
+gem 'fast_jsonapi'
 
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'pg', '>= 0.18', '< 2.0'

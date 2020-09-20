@@ -127,5 +127,17 @@ RSpec.describe ForecastFacade do
         expect(response.icon).to be_a String
       end
     end
+    describe '#weather' do
+      it "combines current daily and hourly forecast to create one weather obj" do
+        response = @facade.weather
+
+        expect(response).to be_a Weather
+        expect(response.current_forecast).to be_a CurrentForecast
+        expect(response.hourly_forecast).to be_an Array
+        expect(response.hourly_forecast[0]).to be_a HourlyForecast
+        expect(response.daily_forecast).to be_an Array
+        expect(response.daily_forecast[0]).to be_a DailyForecast
+      end
+    end
   end
 end
