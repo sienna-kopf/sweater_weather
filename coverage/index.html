@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-09-20T11:02:37-06:00">2020-09-20T11:02:37-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-09-20T11:12:01-06:00">2020-09-20T11:12:01-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.67%
+  99.69%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.14
+         2.07
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>605</b> relevant lines,
-    <span class="green"><b>603</b> lines covered</span> and
+    <b>642</b> relevant lines,
+    <span class="green"><b>640</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed. </span>
     (<span class="green">
-  99.67%
+  99.69%
 </span>
 )
   </div>
@@ -403,9 +403,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#007bae99a98e059bdd24724ce21cd26f17e8096b" class="src_link" title="spec/requests/api/v1/weather/location_forecast_spec.rb">spec/requests/api/v1/weather/location_forecast_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">106</td>
-            <td class="cell--number">72</td>
-            <td class="cell--number">72</td>
+            <td class="cell--number">147</td>
+            <td class="cell--number">109</td>
+            <td class="cell--number">109</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -9710,8 +9710,8 @@
     
 
     <div class="t-line-summary">
-      <b>72</b> relevant lines.
-      <span class="green"><b>72</b> lines covered</span> and
+      <b>109</b> relevant lines.
+      <span class="green"><b>109</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -10301,7 +10301,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :icon</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :description</code>
           </li>
         </div>
       
@@ -10312,7 +10312,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes][:icon]).to be_a String</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes][:description]).to be_a String</code>
           </li>
         </div>
       
@@ -10334,7 +10334,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to be_a Hash</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :icon</code>
           </li>
         </div>
       
@@ -10345,29 +10345,29 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to have_key :type</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes][:icon]).to be_a String</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to have_key :attributes</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :pressure</code>
           </li>
         </div>
       
@@ -10378,7 +10378,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast][:attributes]).to be_an Array</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :dew_point</code>
           </li>
         </div>
       
@@ -10389,7 +10389,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast][:attributes].size).to eq(8)</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :clouds</code>
           </li>
         </div>
       
@@ -10400,29 +10400,29 @@
 
             
 
-            <code class="ruby">        current_hour = complete_forecast[:data][:hourly_forecast][:attributes][0]</code>
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :wind_speed</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="covered" data-hits="1" data-linenumber="63">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :wind_deg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(current_hour).to be_a Hash</code>
           </li>
         </div>
       
@@ -10433,7 +10433,7 @@
 
             
 
-            <code class="ruby">        expect(current_hour).to have_key :dt</code>
+            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to be_a Hash</code>
           </li>
         </div>
       
@@ -10444,29 +10444,29 @@
 
             
 
-            <code class="ruby">        expect(current_hour[:dt]).to be_a Integer</code>
+            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to have_key :type</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast]).to have_key :attributes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="68">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(current_hour).to have_key :temp</code>
           </li>
         </div>
       
@@ -10477,18 +10477,18 @@
 
             
 
-            <code class="ruby">        expect(current_hour[:temp]).to be_a Integer</code>
+            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast][:attributes]).to be_an Array</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:hourly_forecast][:attributes].size).to eq(8)</code>
           </li>
         </div>
       
@@ -10499,29 +10499,29 @@
 
             
 
-            <code class="ruby">        expect(current_hour).to have_key :icon</code>
+            <code class="ruby">        current_hour = complete_forecast[:data][:hourly_forecast][:attributes][0]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(current_hour[:icon]).to be_a String</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_hour).to be_a Hash</code>
           </li>
         </div>
       
@@ -10532,7 +10532,7 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to be_a Hash</code>
+            <code class="ruby">        expect(current_hour).to have_key :dt</code>
           </li>
         </div>
       
@@ -10543,23 +10543,12 @@
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to have_key :type</code>
+            <code class="ruby">        expect(current_hour[:dt]).to be_a Integer</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="76">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to have_key :attributes</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
@@ -10570,24 +10559,35 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="77">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_hour).to have_key :temp</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="78">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast][:attributes]).to be_an Array</code>
+            <code class="ruby">        expect(current_hour[:temp]).to be_a Integer</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="79">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="79">
+            
             
 
             
 
-            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast][:attributes].size).to eq(6)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -10598,7 +10598,7 @@
 
             
 
-            <code class="ruby">        current_day = complete_forecast[:data][:daily_forecast][:attributes][0]</code>
+            <code class="ruby">        expect(current_hour).to have_key :icon</code>
           </li>
         </div>
       
@@ -10609,7 +10609,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to be_a Hash</code>
+            <code class="ruby">        expect(current_hour[:icon]).to be_a String</code>
           </li>
         </div>
       
@@ -10631,7 +10631,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :dt</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :feels_like</code>
           </li>
         </div>
       
@@ -10642,18 +10642,18 @@
 
             
 
-            <code class="ruby">        expect(current_day[:dt]).to be_a Integer</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :pressure</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="85">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">        expect(current_hour).to_not have_key :humidity</code>
           </li>
         </div>
       
@@ -10664,7 +10664,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :temp</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :dew_point</code>
           </li>
         </div>
       
@@ -10675,18 +10675,18 @@
 
             
 
-            <code class="ruby">        expect(current_day[:temp]).to be_a Integer</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :clouds</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="88">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">        expect(current_hour).to_not have_key :visibility</code>
           </li>
         </div>
       
@@ -10697,7 +10697,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :temp_min</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :wind_speed</code>
           </li>
         </div>
       
@@ -10708,18 +10708,18 @@
 
             
 
-            <code class="ruby">        expect(current_day[:temp_min]).to be_a Integer</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :wind_deg</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="91">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="91">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">        expect(current_hour).to_not have_key :main_description</code>
           </li>
         </div>
       
@@ -10730,7 +10730,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :temp_max</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :description</code>
           </li>
         </div>
       
@@ -10741,7 +10741,7 @@
 
             
 
-            <code class="ruby">        expect(current_day[:temp_max]).to be_a Integer</code>
+            <code class="ruby">        expect(current_hour).to_not have_key :pop</code>
           </li>
         </div>
       
@@ -10763,7 +10763,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :main_description</code>
+            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to be_a Hash</code>
           </li>
         </div>
       
@@ -10774,29 +10774,29 @@
 
             
 
-            <code class="ruby">        expect(current_day[:main_description]).to be_a String</code>
+            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to have_key :type</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
+          <li class="covered" data-hits="1" data-linenumber="97">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast]).to have_key :attributes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="98">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="98">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        expect(current_day).to have_key :icon</code>
           </li>
         </div>
       
@@ -10807,18 +10807,18 @@
 
             
 
-            <code class="ruby">        expect(current_day[:icon]).to be_a String</code>
+            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast][:attributes]).to be_an Array</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="100">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">        expect(complete_forecast[:data][:daily_forecast][:attributes].size).to eq(6)</code>
           </li>
         </div>
       
@@ -10829,7 +10829,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :rain</code>
+            <code class="ruby">        current_day = complete_forecast[:data][:daily_forecast][:attributes][0]</code>
           </li>
         </div>
       
@@ -10840,7 +10840,7 @@
 
             
 
-            <code class="ruby">        expect(current_day).to have_key :snow</code>
+            <code class="ruby">        expect(current_day).to be_a Hash</code>
           </li>
         </div>
       
@@ -10851,12 +10851,463 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="104">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :dt</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="105">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:dt]).to be_a Integer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="107">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="108">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:temp]).to be_a Integer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="109">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="110">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :temp_min</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="111">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:temp_min]).to be_a Integer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="112">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="113">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :temp_max</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="114">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:temp_max]).to be_a Integer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="115">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="116">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :main_description</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="117">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:main_description]).to be_a String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="118">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="119">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :icon</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="120">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day[:icon]).to be_a String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="121">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="122">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :rain</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="123">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to have_key :snow</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="124">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="125">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :sunrise</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="126">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :sunset</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="127">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :humidity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="128">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :night_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="129">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :evening_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="130">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :morning_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="131">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :feels_like_day_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="132">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :feels_like_night_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="133">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :feels_like_eve_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="134">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :feels_like_morn_temp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="135">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :pressure</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="136">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :humidity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="137">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :dew_point</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="138">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :wind_speed</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="139">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :wind_deg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="140">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :description</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="141">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :clouds</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="142">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :pop</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="143">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_day).to_not have_key :uvi</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="144">
+            
+            
+
+            
+
             <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="104">
+          <li class="never" data-hits="" data-linenumber="145">
             
             
 
@@ -10867,7 +11318,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="105">
+          <li class="never" data-hits="" data-linenumber="146">
             
             
 
@@ -10878,7 +11329,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="106">
+          <li class="never" data-hits="" data-linenumber="147">
             
             
 

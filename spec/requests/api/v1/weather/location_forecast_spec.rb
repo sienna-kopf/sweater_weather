@@ -50,8 +50,17 @@ RSpec.describe "Forecast Endpoint", type: :request do
         expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :main_description
         expect(complete_forecast[:data][:current_forecast][:attributes][:main_description]).to be_a String
 
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :description
+        expect(complete_forecast[:data][:current_forecast][:attributes][:description]).to be_a String
+
         expect(complete_forecast[:data][:current_forecast][:attributes]).to have_key :icon
         expect(complete_forecast[:data][:current_forecast][:attributes][:icon]).to be_a String
+
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :pressure
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :dew_point
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :clouds
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :wind_speed
+        expect(complete_forecast[:data][:current_forecast][:attributes]).to_not have_key :wind_deg
 
         expect(complete_forecast[:data][:hourly_forecast]).to be_a Hash
         expect(complete_forecast[:data][:hourly_forecast]).to have_key :type
@@ -70,6 +79,18 @@ RSpec.describe "Forecast Endpoint", type: :request do
 
         expect(current_hour).to have_key :icon
         expect(current_hour[:icon]).to be_a String
+
+        expect(current_hour).to_not have_key :feels_like
+        expect(current_hour).to_not have_key :pressure
+        expect(current_hour).to_not have_key :humidity
+        expect(current_hour).to_not have_key :dew_point
+        expect(current_hour).to_not have_key :clouds
+        expect(current_hour).to_not have_key :visibility
+        expect(current_hour).to_not have_key :wind_speed
+        expect(current_hour).to_not have_key :wind_deg
+        expect(current_hour).to_not have_key :main_description
+        expect(current_hour).to_not have_key :description
+        expect(current_hour).to_not have_key :pop
 
         expect(complete_forecast[:data][:daily_forecast]).to be_a Hash
         expect(complete_forecast[:data][:daily_forecast]).to have_key :type
@@ -100,6 +121,26 @@ RSpec.describe "Forecast Endpoint", type: :request do
 
         expect(current_day).to have_key :rain
         expect(current_day).to have_key :snow
+
+        expect(current_day).to_not have_key :sunrise
+        expect(current_day).to_not have_key :sunset
+        expect(current_day).to_not have_key :humidity
+        expect(current_day).to_not have_key :night_temp
+        expect(current_day).to_not have_key :evening_temp
+        expect(current_day).to_not have_key :morning_temp
+        expect(current_day).to_not have_key :feels_like_day_temp
+        expect(current_day).to_not have_key :feels_like_night_temp
+        expect(current_day).to_not have_key :feels_like_eve_temp
+        expect(current_day).to_not have_key :feels_like_morn_temp
+        expect(current_day).to_not have_key :pressure
+        expect(current_day).to_not have_key :humidity
+        expect(current_day).to_not have_key :dew_point
+        expect(current_day).to_not have_key :wind_speed
+        expect(current_day).to_not have_key :wind_deg
+        expect(current_day).to_not have_key :description
+        expect(current_day).to_not have_key :clouds
+        expect(current_day).to_not have_key :pop
+        expect(current_day).to_not have_key :uvi
       end
     end
   end
