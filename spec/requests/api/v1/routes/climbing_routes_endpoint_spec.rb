@@ -20,7 +20,7 @@ RSpec.describe "Climbing Routes Endpoint", type: :request do
         expect(route_response[:data]).to have_key :id
         expect(route_response[:data][:id]).to eq(nil)
         expect(route_response[:data]).to have_key :type
-        expect(route_response[:data][:type]).to eq("climbing route")
+        expect(route_response[:data][:type]).to eq("climbing_route")
         expect(route_response[:data]).to have_key :attributes
 
         expect(route_response[:data][:attributes]).to be_a Hash
@@ -35,7 +35,7 @@ RSpec.describe "Climbing Routes Endpoint", type: :request do
         expect(route_response[:data][:attributes][:forecast]).to have_key :summary
         expect(route_response[:data][:attributes][:forecast][:summary]).to be_a String
         expect(route_response[:data][:attributes][:forecast]).to have_key :temperature
-        expect(route_response[:data][:attributes][:forecast][:temperature]).to be_a Integer
+        expect(route_response[:data][:attributes][:forecast][:temperature]).to be_a String
         expect(route_response[:data][:attributes][:forecast]).to_not have_key :dt
         expect(route_response[:data][:attributes][:forecast]).to_not have_key :feels_like
         expect(route_response[:data][:attributes][:forecast]).to_not have_key :humidity
