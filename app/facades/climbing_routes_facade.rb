@@ -1,10 +1,12 @@
 class ClimbingRoutesFacade
   attr_reader :lat,
-              :lon
+              :lon,
+              :location
 
-  def initialize(lat, lon)
+  def initialize(lat, lon, location)
     @lat = lat
     @lon = lon
+    @location = location
     @service = ClimbingRoutesService.new
   end
 
@@ -16,7 +18,7 @@ class ClimbingRoutesFacade
     route_array = response_routes[:routes]
 
     route_array.map do |route_info|
-      Route.new(route_info)
-    end 
+      Route.new(route_info, @location)
+    end
   end
 end
