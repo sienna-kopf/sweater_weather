@@ -14,6 +14,6 @@ class Route
     @location = route_info[:location]
     @latitude = route_info[:latitude]
     @longitude = route_info[:longitude]
-    @distance_to_route = MapQuestService.new.distance_to_route(location, @latitude, @longitude)[:route][:distance].round(2)
+    @distance_to_route = MapQuestService.new.distance_to_route(location, @latitude, @longitude)[:route][:distance].round(2).to_s
   end
 end
