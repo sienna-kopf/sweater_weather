@@ -1,438 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/background_image_facade.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          3,
-          3,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/climbing_routes_facade.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
-          40,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/forecast_facade.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          8,
-          8,
-          8,
-          null,
-          null,
-          1,
-          12,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
-          null,
-          null,
-          1,
-          3,
-          null,
-          3,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          144,
-          3,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          24,
-          3,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/map_quest_facade.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          3,
-          null,
-          3,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/background_image.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/climbing_route.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/coordinate.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/current_forecast_condensed.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/current_forecast.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/daily_forecast.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          29,
-          29,
-          29,
-          29,
-          29,
-          29,
-          29,
-          29,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/hourly_forecast.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          150,
-          150,
-          150,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/route.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          47,
-          47,
-          47,
-          47,
-          47,
-          47,
-          47,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/weather.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/climbing_route_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/forecast_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/background_image_service.rb": {
-        "lines": [
-          1,
-          1,
-          4,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/climbing_routes_service.rb": {
-        "lines": [
-          1,
-          1,
-          4,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/map_quest_service.rb": {
-        "lines": [
-          1,
-          1,
-          5,
-          null,
-          null,
-          1,
-          48,
-          null,
-          null,
-          1,
-          null,
-          1,
-          53,
-          53,
-          null,
-          null,
-          null,
-          1,
-          53,
-          53,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/weather_service.rb": {
-        "lines": [
-          1,
-          1,
-          13,
-          null,
-          null,
-          1,
-          null,
-          1,
-          13,
-          13,
-          null,
-          null,
-          null,
-          1,
-          13,
-          13,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/backgrounds_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/backgrounds_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/routes_controller.rb": {
         "lines": [
           1,
@@ -452,13 +20,26 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/forecast_controller.rb": {
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/map_quest_facade.rb": {
+        "lines": [
           1,
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -466,8 +47,449 @@
           null,
           null
         ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/map_quest_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          null,
+          1,
+          21,
+          21,
+          null,
+          null,
+          null,
+          1,
+          21,
+          21,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/coordinate.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/forecast_facade.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/weather_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/current_forecast_condensed.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/climbing_routes_facade.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/climbing_routes_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/route.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/climbing_route_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/climbing_route.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/backgrounds_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/forecast_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/facades/background_image_facade.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/current_forecast.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/background_image.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/weather.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/daily_forecast.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/hourly_forecast.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/backgrounds_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/forecast_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/services/background_image_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1600709514
+    "timestamp": 1600709751
   }
 }
