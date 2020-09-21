@@ -6,20 +6,10 @@ RSpec.describe ClimbingRouteSerializer do
 
     current_attrs =
     {
-        "dt": 1600706881,
-        "sunrise": 1600687030,
-        "sunset": 1600730877,
         "temp": 62.38,
-        "feels_like": 60.42,
-        "humidity": 64,
-        "uvi": 8.39,
-        "visibility": 10000,
         "weather": [
             {
-                "id": 800,
-                "main": "Clear",
-                "description": "clear sky",
-                "icon": "01d"
+                "description": "clear sky"
             }
         ]
     }
@@ -73,11 +63,11 @@ RSpec.describe ClimbingRouteSerializer do
       Route.new(route_info, location)
     end
 
-    current_weather = CurrentForecast.new(current_attrs)
+    current_weather = CurrentForecastCondensed.new(current_attrs)
 
     climbing_route = ClimbingRoute.new(location, current_weather, routes)
 
-    json_response = ClimbingRouteSerializer.new(climbing_route)
+    json_response = ClimbingRouteSerializer.new(climbing_route).to_json
 
     route_response = JSON.parse(json_response, symbolize_names: true)
 
@@ -87,7 +77,7 @@ RSpec.describe ClimbingRouteSerializer do
     expect(route_response[:data]).to have_key :id
     expect(route_response[:data][:id]).to eq(nil)
     expect(route_response[:data]).to have_key :type
-    expect(route_response[:data][:type]).to eq("climbing route")
+    expect(route_response[:data][:type]).to eq("climbing_route")
     expect(route_response[:data]).to have_key :attributes
 
     expect(route_response[:data][:attributes]).to be_a Hash
@@ -102,7 +92,7 @@ RSpec.describe ClimbingRouteSerializer do
     expect(route_response[:data][:attributes][:forecast]).to have_key :summary
     expect(route_response[:data][:attributes][:forecast][:summary]).to be_a String
     expect(route_response[:data][:attributes][:forecast]).to have_key :temperature
-    expect(route_response[:data][:attributes][:forecast][:temperature]).to be_a Integer
+    expect(route_response[:data][:attributes][:forecast][:temperature]).to be_a String
     expect(route_response[:data][:attributes][:forecast]).to_not have_key :dt
     expect(route_response[:data][:attributes][:forecast]).to_not have_key :feels_like
     expect(route_response[:data][:attributes][:forecast]).to_not have_key :humidity
