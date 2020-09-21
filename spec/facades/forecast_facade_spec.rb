@@ -139,5 +139,15 @@ RSpec.describe ForecastFacade do
         expect(response.daily_forecast[0]).to be_a DailyForecast
       end
     end
+
+    describe '#current_forecast_condensed' do
+      it "creates a new forecast object with just temperature and summary attiributes" do
+        response = @facade.current_forecast_condensed
+
+        expect(response).to be_a CurrentForecastCondensed
+        expect(response.summary).to be_a String
+        expect(response.temperature).to be_a String
+      end
+    end
   end
 end
