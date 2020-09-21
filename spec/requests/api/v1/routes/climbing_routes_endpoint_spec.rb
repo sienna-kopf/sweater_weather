@@ -61,6 +61,16 @@ RSpec.describe "Climbing Routes Endpoint", type: :request do
         expect(first_route).to have_key :location
         expect(first_route[:location]).to be_an Array
         expect(first_route[:location][0]).to be_a String
+
+        expect(first_route).to_not have_key :id
+        expect(first_route).to_not have_key :stars
+        expect(first_route).to_not have_key :starVotes
+        expect(first_route).to_not have_key :pitches
+        expect(first_route).to_not have_key :url
+        expect(first_route).to_not have_key :imgSqSmall
+        expect(first_route).to_not have_key :imgSmall
+        expect(first_route).to_not have_key :imgSmallMed
+        expect(first_route).to_not have_key :imgMedium
       end
     end
   end
