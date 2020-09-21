@@ -35,8 +35,6 @@ RSpec.describe MapQuestService do
         expect(response[:route]).to be_a Hash
         expect(response[:route]).to have_key :distance
         expect(response[:route][:distance]).to be_a Float
-        expect(response[:route]).to have_key :formattedTime
-        expect(response[:route][:formattedTime]).to be_a String
       end
     end
   end
