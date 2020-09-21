@@ -80,7 +80,7 @@ RSpec.describe ClimbingRoute do
     expect(climbing_route).to be_a ClimbingRoute
     expect(climbing_route.location).to eq("erwin, tn")
     expect(climbing_route.location).to be_a String
-    expect(climbing_route.current_weather).to be_a CurrentForecast
+    expect(climbing_route.current_forecast).to be_a CurrentForecast
     expect(climbing_route.routes).to be_an Array
     expect(climbing_route.routes[0]).to be_a Route
   end
