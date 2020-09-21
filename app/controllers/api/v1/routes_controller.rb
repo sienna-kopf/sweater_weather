@@ -6,8 +6,10 @@ class Api::V1::RoutesController < ApplicationController
     lat = lat_long.lat
     lon = lat_long.lon
 
-    current_weather = ForecastFacade.new(lat, lon).current_forecast
-    binding.pry
+    forecast = ForecastFacade.new(lat, lon).current_forecast_condensed
 
+    routes = ClimbingRoutesFacade.new(lat, lon, location).routes
+
+    render json: ClimbingRouteSerializer.new(ClimbingRoute.new(location, forecast, routes))
   end
 end
