@@ -17,8 +17,9 @@ describe Route do
       "longitude": -105.286,
       "latitude": 39.9319
     }
+    location = "erwin, tn"
 
-    route = Route.new(attrs)
+    route = Route.new(attrs, location)
 
     expect(route).to be_a Route
     expect(route.name).to eq("The Yellow Spur")
@@ -33,5 +34,7 @@ describe Route do
     expect(route.longitude).to be_a Float
     expect(route.latitude).to eq(39.9319)
     expect(route.latitude).to be_a Float
+    expect(route.distance_to_route).to eq(1473.29)
+    expect(route.distance_to_route).to be_a Float
   end
 end
