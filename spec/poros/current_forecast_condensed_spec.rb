@@ -13,11 +13,10 @@ describe CurrentForecastCondensed do
 
     condensed_forecast = CurrentForecastCondensed.new(attrs)
 
-    expect(current).to be_a CurrentForecastCondensed
-    expect(current.temperature).to be_a Integer
-    expect(current.temperature).to eq(68)
-    expect(current.summary).to be_a String
-    expect(current.summary).to eq("scattered clouds")
-    expect(current.icon).to eq("03d")
+    expect(condensed_forecast).to be_a CurrentForecastCondensed
+    expect(condensed_forecast.temperature).to be_a String
+    expect(condensed_forecast.temperature).to eq("68")
+    expect(condensed_forecast.summary).to be_a String
+    expect(condensed_forecast.summary).to eq("scattered clouds")
   end
 end
