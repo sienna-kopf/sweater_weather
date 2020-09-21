@@ -40,7 +40,7 @@ RSpec.describe ClimbingRoutesFacade do
         expect(response.location).to be_an Array
         expect(response.latitude).to be_a Float
         expect(response.longitude).to be_a Float
-        expect(response.distance_to_route).to be_a Float
+        expect(response.distance_to_route).to be_a String
       end
     end
   end
