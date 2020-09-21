@@ -24,5 +24,20 @@ RSpec.describe MapQuestService do
         expect(target_location[:latLng][:lng]).to eq(-104.984853)
       end
     end
+    context '#distance_to_route' do
+      it "takes in a location and coordinates in latitude and longitude and determines the distance/time between locations" do
+        location = "erwin, tn"
+        lat = 35.8536
+        lon = -82.2401
+        service = MapQuestService.new
+        response = service.distance_to_route(location, lat, lon)
+        expect(response).to be_a Hash
+        expect(response[:route]).to be_a Hash
+        expect(response[:route]).to have_key :distance
+        expect(response[:route][:distance]).to be_a Float
+        expect(response[:route]).to have_key :formattedTime
+        expect(response[:route][:formattedTime]).to be_a String
+      end
+    end
   end
 end
