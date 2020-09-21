@@ -34,7 +34,7 @@ describe Route do
     expect(route.longitude).to be_a Float
     expect(route.latitude).to eq(39.9319)
     expect(route.latitude).to be_a Float
-    expect(route.distance_to_route).to eq(1473.29)
-    expect(route.distance_to_route).to be_a Float
+    expect(route.distance_to_route).to eq("1473.29")
+    expect(route.distance_to_route).to be_a String
   end
 end
