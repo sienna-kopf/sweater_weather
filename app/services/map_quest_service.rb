@@ -3,6 +3,10 @@ class MapQuestService
     to_json("/geocoding/v1/address?location=#{location}")
   end
 
+  def distance_to_route(location, lat, lon)
+    to_json("/directions/v2/route?from=#{location}&to=#{lat},#{lon}")
+  end
+
   private
 
   def conn
