@@ -36,8 +36,15 @@ RSpec.describe "Climbing Routes Endpoint", type: :request do
         expect(route_response[:data][:attributes][:forecast][:summary]).to be_a String
         expect(route_response[:data][:attributes][:forecast]).to have_key :temperature
         expect(route_response[:data][:attributes][:forecast][:temperature]).to be_a Integer
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :dt
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :feels_like
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :humidity
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :icon
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :main_description
         expect(route_response[:data][:attributes][:forecast]).to_not have_key :sunrise
-        expect(route_response[:data][:attributes][:forecast]).to_not have_key :wind_speed
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :sunset
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :uvi
+        expect(route_response[:data][:attributes][:forecast]).to_not have_key :visibility
 
         expect(route_response[:data][:attributes][:routes]).to be_an Array
         first_route = route_response[:data][:attributes][:routes][0]
