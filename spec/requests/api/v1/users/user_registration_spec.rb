@@ -13,10 +13,14 @@ RSpec.describe 'User Registration Endpoint' do
           "password_confirmation": "password"
         }
 
-        post "/api/v1/users" do |req|
-          req.body = JSON.generate(body)
-          req.headersp['CONTENT_TYPE'] = 'application/json'
-        end
+        post "/api/v1/users", params: JSON.generate(body), headers: headers
+
+        # status: :bad_request
+        #
+        # empty hash
+        # new hash = @model.errors.to_hash(true).map
+        #
+        # empty_hash[:errors] = new_hash
 
         expect(response).to be_successful
         expect(response.status).to eq(201)
