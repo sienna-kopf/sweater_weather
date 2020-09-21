@@ -16,6 +16,12 @@ class ForecastFacade
     Weather.new(current_forecast, hourly_forecast, daily_forecast)
   end
 
+  def current_forecast_condensed
+    current_forecast_info = response_forecast[:current]
+
+    CurrentForecastCondensed.new(current_forecast_info)
+  end
+
   def current_forecast
     current_forecast_info = response_forecast[:current]
 
