@@ -23,7 +23,6 @@ RSpec.describe ClimbingRoutesService do
         expect(target_route[:longitude]).to be_a Float
         expect(target_route).to have_key :latitude
         expect(target_route[:latitude]).to be_a Float
-        target_location = target_route[:locations][0]
       end
     end
   end
