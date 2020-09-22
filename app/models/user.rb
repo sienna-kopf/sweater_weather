@@ -4,8 +4,7 @@ class User < ApplicationRecord
   validates :api_key, uniqueness: true, presence: true
   has_secure_password
 
-  after_validation :user do
+  after_validation(on: :create) do
     self.api_key = Rails.application.secrets.secret_key_base
-    self.save
   end
 end
