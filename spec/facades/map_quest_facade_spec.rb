@@ -38,5 +38,29 @@ RSpec.describe MapQuestFacade do
         expect(response.lon).to eq(-104.984853)
       end
     end
+    describe "#response_road_trip" do
+      it 'calls the map quest service to determine the travel time between an origin and destination', :vcr do
+        origin = "denver, co"
+        destination = "pueblo, co"
+        facade = MapQuestFacade.new(origin, destination)
+
+        response = facade.response_road_trip
+        expect(response).to be_a Hash
+        expect(response[:route]).to be_a Hash
+        expect(response[:route]).to have_key :formattedTime
+        expect(response[:route][:formattedTime]).to be_a String
+      end
+    end
+    describe "#trip" do
+      it 'instantiates a trip poro based on the payload returned by the map quest call', :vcr do
+        origin = "denver, co"
+        destination = "pueblo, co"
+        facade = MapQuestFacade.new(origin, destination)
+
+        response = facade.trip
+        expect(response).to be_a Trip
+        expect(response.travel_time).to be_a String
+      end
+    end
   end
 end
