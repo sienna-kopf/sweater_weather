@@ -16,6 +16,16 @@ class ForecastFacade
     Weather.new(current_forecast, hourly_forecast, daily_forecast)
   end
 
+  def forecast_condensed(travel_time)
+    time = (Time.parse(travel_time) + 1800).to_s
+    date_time = DateTime.parse(time).beginning_of_hour
+
+    final_time = date_time.strftime("%k").to_i
+    forecast_info = response_forecast[:hourly][(final_time - 1)]
+
+    ForecastCondensed.new(forecast_info)
+  end
+
   def current_forecast
     current_forecast_info = response_forecast[:current]
 
