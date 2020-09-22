@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ClimbingRoute do
+RSpec.describe RoadTrip do
   it 'exists' do
     origin = "denver, co"
     destination = "pueblo, co"
