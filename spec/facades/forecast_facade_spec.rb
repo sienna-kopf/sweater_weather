@@ -149,5 +149,14 @@ RSpec.describe ForecastFacade do
         expect(response.summary).to be_a String
       end
     end
+
+    describe '#hour_selection' do
+      it "determines the index of the desired hour", :vcr do
+        travel_time = "01:43:57"
+        index = @facade.hour_selection(travel_time)
+
+        expect(index).to eq(2)
+      end
+    end
   end
 end
