@@ -12,6 +12,8 @@ class Api::V1::RoadTripController < ApplicationController
       forecast = ForecastFacade.new(lat, lon).forecast_condensed(trip.travel_time)
 
       render json: RoadTripSerializer.new(RoadTrip.new(origin, destination, trip.travel_time, forecast))
+    else
+      render json: {}, status: 401
     end
   end
 

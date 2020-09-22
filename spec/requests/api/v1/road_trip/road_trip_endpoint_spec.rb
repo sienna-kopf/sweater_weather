@@ -105,19 +105,9 @@ RSpec.describe "Road Trip Endpoint", type: :request do
         post "/api/v1/road_trip", params: JSON.generate(body), headers: headers
 
         expect(response.content_type).to eq("application/json")
+        expect(response.status).to eq(401)
 
-        binding.pry
-
-        # error_response = JSON.parse(response.body, symbolize_names: true)
-
-        # expect(error_response).to be_a Hash
-        # expect(error_response).to have_key :errors
-        # expect(error_response[:errors]).to be_a Hash
-        # expect(error_response[:errors]).to have_key :status
-        # expect(error_response[:errors][:status]).to eq(401)
-        # expect(error_response[:errors]).to have_key :error_messages
-        # expect(error_response[:errors][:error_messages]).to be_an Array
-        # expect(error_response[:errors][:error_messages]).to include("Password confirmation doesn't match Password")
+        expect(response.body).to eq("{}")
       end
     end
   end
@@ -146,20 +136,10 @@ RSpec.describe "Road Trip Endpoint", type: :request do
         post "/api/v1/road_trip", params: JSON.generate(body), headers: headers
 
         expect(response.content_type).to eq("application/json")
+        expect(response.status).to eq(401)
 
-        # binding.pry
-
-        # error_response = JSON.parse(response.body, symbolize_names: true)
-
-        # expect(error_response).to be_a Hash
-        # expect(error_response).to have_key :errors
-        # expect(error_response[:errors]).to be_a Hash
-        # expect(error_response[:errors]).to have_key :status
-        # expect(error_response[:errors][:status]).to eq(401)
-        # expect(error_response[:errors]).to have_key :error_messages
-        # expect(error_response[:errors][:error_messages]).to be_an Array
-        # expect(error_response[:errors][:error_messages]).to include("Password confirmation doesn't match Password")
-      end 
+        expect(response.body).to eq("{}")
+      end
     end
   end
 end
