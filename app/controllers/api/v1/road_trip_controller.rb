@@ -4,9 +4,7 @@ class Api::V1::RoadTripController < ApplicationController
       origin = road_trip_params[:origin]
       destination = road_trip_params[:destination]
       trip = MapQuestFacade.new(origin, destination).trip
-
       forecast = ForecastFacade.new(destination).forecast_condensed(trip.travel_time)
-
       render json: RoadTripSerializer.new(RoadTrip.new(origin, destination, trip.travel_time, forecast))
     else
       render json: {}, status: 401
