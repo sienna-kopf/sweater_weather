@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe BackgroundImageService do
   context 'instance methods' do
     context '#image' do
-      it "takes in a city and returns an image of that location" do
+      it "takes in a city and returns an image of that location", :vcr do
         city = "denver"
         service = BackgroundImageService.new
         response = service.image(city)

@@ -7,7 +7,7 @@ RSpec.describe BackgroundImageFacade do
       @facade = BackgroundImageFacade.new(location)
     end
     describe '#response_image' do
-      it "calls the Pixabay API to return 5 images for a city keyword" do
+      it "calls the Pixabay API to return 5 images for a city keyword", :vcr do
         response = @facade.response_image
 
         expect(response).to be_a Hash
@@ -28,7 +28,7 @@ RSpec.describe BackgroundImageFacade do
     end
 
     describe '#background_image' do
-      it "instantiates an image object from a random one of the 5 responses" do
+      it "instantiates an image object from a random one of the 5 responses", :vcr do
         response = @facade.background_image
 
         expect(response).to be_an BackgroundImage

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User Registration Endpoint' do
   describe "user registration details are passed in the body of the post request" do
     describe "successful request" do
-      it "creates a user and generates a unique API key for that user" do
+      it "creates a user and generates a unique API key for that user", :vcr do
         headers = { "CONTENT_TYPE" => "application/json"}
 
         body =
@@ -39,7 +39,7 @@ RSpec.describe 'User Registration Endpoint' do
       end
     end
     describe "unsuccessful request" do
-      it "returns the appropriate 400 level status code and body w/ description of failure" do
+      it "returns the appropriate 400 level status code and body w/ description of failure", :vcr do
         headers = { "CONTENT_TYPE" => "application/json"}
 
         body =

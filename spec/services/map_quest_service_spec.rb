@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MapQuestService do
   context 'instance methods' do
     context '#lat_long' do
-      it "takes in a location and transforms it into lat and long coordinates" do
+      it "takes in a location and transforms it into lat and long coordinates", :vcr do
         location = "denver, co"
         service = MapQuestService.new
         response = service.lat_long(location)

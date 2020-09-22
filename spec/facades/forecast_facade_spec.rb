@@ -8,7 +8,7 @@ RSpec.describe ForecastFacade do
       @facade = ForecastFacade.new(lat, lon)
     end
     describe '#response_forecast' do
-      it "calls the open weather API to return current, hourly, and daily weather" do
+      it "calls the open weather API to return current, hourly, and daily weather", :vcr do
         response = @facade.response_forecast
         expect(response).to be_a Hash
         expect(response).to have_key :current
@@ -87,7 +87,7 @@ RSpec.describe ForecastFacade do
       end
     end
     describe '#current_forecast' do
-      it "instantiates a current forecast object with current forecast coming through as the payload" do
+      it "instantiates a current forecast object with current forecast coming through as the payload", :vcr do
         response = @facade.current_forecast
 
         expect(response).to be_a CurrentForecast
@@ -105,7 +105,7 @@ RSpec.describe ForecastFacade do
       end
     end
     describe '#hourly_forecast' do
-      it "instantiates a hourly forecast object with hourly forecast coming through as the payload" do
+      it "instantiates a hourly forecast object with hourly forecast coming through as the payload", :vcr do
         response = @facade.hourly_forecast[0]
 
         expect(response).to be_a HourlyForecast
@@ -115,7 +115,7 @@ RSpec.describe ForecastFacade do
       end
     end
     describe '#daily_forecast' do
-      it "instantiates a daily forecast object with daily forecast coming through as the payload" do
+      it "instantiates a daily forecast object with daily forecast coming through as the payload", :vcr do
         response = @facade.daily_forecast[0]
 
         expect(response).to be_a DailyForecast
@@ -128,7 +128,7 @@ RSpec.describe ForecastFacade do
       end
     end
     describe '#weather' do
-      it "combines current daily and hourly forecast to create one weather obj" do
+      it "combines current daily and hourly forecast to create one weather obj", :vcr do
         response = @facade.weather
 
         expect(response).to be_a Weather

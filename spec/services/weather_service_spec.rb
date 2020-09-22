@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe WeatherService do
   context 'instance methods' do
     context '#forecast' do
-      it "takes in a location(lat, lon) and returns current, hourly and daily weather info" do
+      it "takes in a location(lat, lon) and returns current, hourly and daily weather info", :vcr do
         lat = 39.738453
         lon = -104.984853
         service = WeatherService.new
