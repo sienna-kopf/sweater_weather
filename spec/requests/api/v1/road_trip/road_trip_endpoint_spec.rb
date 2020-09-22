@@ -5,13 +5,26 @@ RSpec.describe "Road Trip Endpoint", type: :request do
     describe "collects information on time travel between the locations" do
       describe "and returns temperature and summary of weather at destination based on arrival time"
       it "returns the origin and destination locations, travel time, and arrival forecast" do
+        headers_reg = { "CONTENT_TYPE" => "application/json"}
+
+        body_reg =
+        {
+          "email": "whatever@example.com",
+          "password": "password",
+          "password_confirmation": "password"
+        }
+
+        post "/api/v1/users", params: JSON.generate(body_reg), headers: headers_reg
+
+        api_key = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:api_key]
+
         headers = { "CONTENT_TYPE" => "application/json"}
 
         body =
         {
           "origin": "Denver,CO",
           "destination": "Pueblo,CO",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "#{api_key}"
         }
 
         post "/api/v1/road_trip", params: JSON.generate(body), headers: headers
