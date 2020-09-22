@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe ForecastFacade do
   describe 'instance methods' do
     before :each do
-      lat = 39.738453
-      lon = -104.984853
-      @facade = ForecastFacade.new(lat, lon)
+      location = "erwin, tn"
+      @facade = ForecastFacade.new(location)
     end
     describe '#response_forecast' do
       it "calls the open weather API to return current, hourly, and daily weather", :vcr do
