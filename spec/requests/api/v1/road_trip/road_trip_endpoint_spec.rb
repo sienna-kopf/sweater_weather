@@ -5,7 +5,7 @@ RSpec.describe "Road Trip Endpoint", type: :request do
     describe "takes in origin and destination locations in the form city, state code" do
       describe "collects information on time travel between the locations" do
         describe "and returns temperature and summary of weather at destination based on arrival time" do
-          it "returns the origin and destination locations, travel time, and arrival forecast" do
+          it "returns the origin and destination locations, travel time, and arrival forecast", :vcr do
             headers_reg = { "CONTENT_TYPE" => "application/json"}
 
             body_reg =
@@ -81,7 +81,7 @@ RSpec.describe "Road Trip Endpoint", type: :request do
   end
   describe "authentication fails no match for api key" do
     describe "returns the appropriate 401 (unathorized) level status code and body w/ description of failure" do
-      it "registers a valid user and then makes post request with incorrect api key" do
+      it "registers a valid user and then makes post request with incorrect api key", :vcr do
         headers_reg = { "CONTENT_TYPE" => "application/json"}
 
         body_reg =
@@ -113,7 +113,7 @@ RSpec.describe "Road Trip Endpoint", type: :request do
   end
   describe "authentication fails no api key given" do
     describe "returns the appropriate 401 (unathorized) level status code and body w/ description of failure" do
-      it "registers a user and then makes the post request for road trip without sending an api key" do
+      it "registers a user and then makes the post request for road trip without sending an api key", :vcr do
         headers_reg = { "CONTENT_TYPE" => "application/json"}
 
         body_reg =

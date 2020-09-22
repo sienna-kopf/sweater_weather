@@ -24,8 +24,8 @@ RSpec.describe MapQuestService do
         expect(target_location[:latLng][:lng]).to eq(-104.984853)
       end
     end
-    context '#road_trip', :vcr do
-      it "takes in origin and destination locations to determine the travel time between locations" do
+    context '#road_trip' do
+      it "takes in origin and destination locations to determine the travel time between locations", :vcr do
         origin = "denver, co"
         destination = "pueblo, co"
         service = MapQuestService.new
