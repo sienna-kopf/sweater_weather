@@ -1,16 +1,15 @@
 class Api::V1::UsersController < ApplicationController
   def create
-    binding.pry
     user = User.create(user_params)
-    binding.pry
-    if user.valid?
-      user.save
-
+    if user.save
+      render json: UsersSerializer.new(user)
+    else
+      render json: ErrorsSerializer.new(user).errors_hash, status: :bad_request
     end
   end
 
   private
   def user_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :password_confirmation)
   end
 end
