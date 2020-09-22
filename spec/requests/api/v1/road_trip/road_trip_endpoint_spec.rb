@@ -64,15 +64,15 @@ RSpec.describe "Road Trip Endpoint", type: :request do
         expect(road_trip_response[:data][:attributes][:arrival_forecast]).to have_key :temperature
         expect(road_trip_response[:data][:attributes][:arrival_forecast][:temperature]).to be_a String
 
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :dt
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :feels_like
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :humidity
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :icon
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :main_description
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :sunrise
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :sunset
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :uvi
-        expect(road_trip_response[:data][:attributes][:forecast]).to_not have_key :visibility
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :dt
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :feels_like
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :humidity
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :icon
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :main_description
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :sunrise
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :sunset
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :uvi
+        expect(road_trip_response[:data][:attributes][:arrival_forecast]).to_not have_key :visibility
       end
     end
   end
