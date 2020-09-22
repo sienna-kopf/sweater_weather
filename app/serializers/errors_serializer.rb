@@ -4,8 +4,12 @@ class ErrorsSerializer
   end
 
   def errors_hash
-    error_messages = @model.errors.to_hash(true).map do |_, message|
-      message.join
+    if @model.errors.messages.empty?
+      error_messages = ["credentials are bad"]
+    else
+      error_messages = @model.errors.to_hash(true).map do |_, message|
+        message.join
+      end
     end
     json_hash = {
       errors:
