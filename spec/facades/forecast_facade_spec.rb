@@ -139,5 +139,16 @@ RSpec.describe ForecastFacade do
         expect(response.daily_forecast[0]).to be_a DailyForecast
       end
     end
+
+    describe '#forecast_condensed' do
+      it "selects the proper hourly forecast based on travel time and creates a condensed forecast object", :vcr do
+        travel_time = "01:43:57"
+        response = @facade.forecast_condensed(travel_time)
+
+        expect(response).to be_a ForecastCondensed
+        expect(response.temperature).to be_a String
+        expect(response.summary).to be_a String
+      end
+    end
   end
 end
