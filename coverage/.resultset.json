@@ -90,6 +90,20 @@
           null
         ]
       },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          11,
+          null,
+          null
+        ]
+      },
       "/Users/cece/turing/3mod/projects/sweater_weather/app/poros/background_image.rb": {
         "lines": [
           1,
@@ -208,7 +222,37 @@
           null
         ]
       },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/errors_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/forecast_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/serializers/users_serializer.rb": {
         "lines": [
           1,
           1,
@@ -311,6 +355,25 @@
           null
         ]
       },
+      "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/cece/turing/3mod/projects/sweater_weather/app/controllers/api/v1/forecast_controller.rb": {
         "lines": [
           1,
@@ -327,6 +390,6 @@
         ]
       }
     },
-    "timestamp": 1600641076
+    "timestamp": 1600748135
   }
 }
