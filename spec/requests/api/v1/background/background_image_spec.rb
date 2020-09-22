@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Background Image Endpoint", type: :request do
   describe "takes in a location in the form city, state code" do
-    it "returns a background image that matches that location" do
+    it "returns a background image that matches that location", :vcr do
       location = "denver, co"
 
       get "/api/v1/backgrounds?location=#{location}"

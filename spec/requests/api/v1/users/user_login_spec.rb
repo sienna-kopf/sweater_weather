@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User Login Endpoint' do
   describe "user login details are passed in the body of the post request" do
     describe "successful request" do
-      it "returnes a 200 response with the users api key" do
+      it "returnes a 200 response with the users api key", :vcr do
         headers_registration = { "CONTENT_TYPE" => "application/json"}
 
         body_reg =
@@ -49,7 +49,7 @@ RSpec.describe 'User Login Endpoint' do
       end
     end
     describe "unsuccessful request" do
-      it "returns the appropriate 400 level status code and body w/ description of failure" do
+      it "returns the appropriate 400 level status code and body w/ description of failure", :vcr do
         headers_registration = { "CONTENT_TYPE" => "application/json"}
 
         body_reg =

@@ -7,7 +7,7 @@ RSpec.describe MapQuestFacade do
       @facade = MapQuestFacade.new(location)
     end
     describe '#response_lat_long' do
-      it "calls the map quest service to retrieve lat long data for a particular location" do
+      it "calls the map quest service to retrieve lat long data for a particular location", :vcr do
         response = @facade.response_lat_long
         expect(response).to be_a Hash
         expect(response[:results]).to be_an Array
@@ -27,7 +27,7 @@ RSpec.describe MapQuestFacade do
       end
     end
     describe '#lat_long' do
-      it "instantiates a coordinates poro passing in response payload as data" do
+      it "instantiates a coordinates poro passing in response payload as data", :vcr do
         response = @facade.lat_long
 
         expect(response).to be_a Coordinate
