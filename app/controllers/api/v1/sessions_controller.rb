@@ -1,7 +1,7 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::SessionsController < ApplicationController
   def create
-    user = User.create(user_params)
-    if user.save
+    user = User.find_by_email(user_params[:email])
+    if user.authenticate(user_params[:password])
       session[:user_id] = user.id
       render json: UsersSerializer.new(user)
     else
@@ -10,7 +10,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
+
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password)
   end
 end
