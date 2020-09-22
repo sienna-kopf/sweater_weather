@@ -15,15 +15,7 @@ RSpec.describe 'User Registration Endpoint' do
 
         post "/api/v1/users", params: JSON.generate(body), headers: headers
 
-        # status: :bad_request
-        #
-        # empty hash
-        # new hash = @model.errors.to_hash(true).map
-        #
-        # empty_hash[:errors] = new_hash
-
         expect(response).to be_successful
-        expect(response.status).to eq(201)
         expect(response.content_type).to eq("application/json")
 
         new_user = JSON.parse(response.body, symbolize_names: true)
@@ -48,6 +40,29 @@ RSpec.describe 'User Registration Endpoint' do
     end
     describe "unsuccessful request" do
       it "returns the appropriate 400 level status code and body w/ description of failure" do
+        headers = { "CONTENT_TYPE" => "application/json"}
+
+        body =
+        {
+          "email": "whatever1@example.com",
+          "password": "password",
+          "password_confirmation": "wrong_password"
+        }
+
+        post "/api/v1/users", params: JSON.generate(body), headers: headers
+
+        expect(response.content_type).to eq("application/json")
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(error_response).to be_a Hash
+        expect(error_response).to have_key :errors
+        expect(error_response[:errors]).to be_a Hash
+        expect(error_response[:errors]).to have_key :status
+        expect(error_response[:errors][:status]).to eq(400)
+        expect(error_response[:errors]).to have_key :error_messages
+        expect(error_response[:errors][:error_messages]).to be_an Array
+        expect(error_response[:errors][:error_messages]).to include("Password confirmation doesn't match Password")
       end
     end
   end
