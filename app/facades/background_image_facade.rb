@@ -11,9 +11,10 @@ class BackgroundImageFacade
   end
 
   def background_image
-    image_number = (0..4).to_a.sample
-    image_info = response_image[:hits][image_number]
+    BackgroundImage.new(response_image[:hits][sample_index])
+  end
 
-    BackgroundImage.new(image_info)
+  def sample_index
+    (0..4).to_a.sample
   end
 end
