@@ -1,11 +1,14 @@
 class ForecastFacade
-  attr_reader :lat,
-              :lon
+  attr_reader :location
 
-  def initialize(lat, lon)
-    @lat = lat
-    @lon = lon
+  def initialize(location)
+    @lat = lat_lon(location).lat
+    @lon = lat_lon(location).lon
     @service = WeatherService.new
+  end
+
+  def lat_lon(location)
+    MapQuestFacade.new(location).lat_long
   end
 
   def response_forecast
