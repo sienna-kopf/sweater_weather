@@ -65,7 +65,7 @@ RSpec.describe 'User Registration Endpoint' do
         expect(error_response[:data]).to have_key :attributes
         expect(error_response[:data][:attributes]).to be_a Hash
         expect(error_response[:data][:attributes]).to have_key :error_messages
-        expect(error_response[:data][:attributes][:error_messages]).to eq(["Password confirmation doesn't match Password"])
+        expect(error_response[:data][:attributes][:error_messages]).to eq("Password confirmation doesn't match Password")
       end
     end
   end

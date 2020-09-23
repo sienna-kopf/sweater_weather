@@ -85,7 +85,7 @@ RSpec.describe 'User Login Endpoint' do
         expect(error_response[:data]).to have_key :attributes
         expect(error_response[:data][:attributes]).to be_a Hash
         expect(error_response[:data][:attributes]).to have_key :error_messages
-        expect(error_response[:data][:attributes][:error_messages]).to eq(["credentials are bad"])
+        expect(error_response[:data][:attributes][:error_messages]).to eq("credentials are bad")
       end
     end
   end
