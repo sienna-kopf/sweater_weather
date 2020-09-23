@@ -1,11 +1,14 @@
 class ForecastFacade
-  attr_reader :lat,
-              :lon
+  attr_reader :location
 
-  def initialize(lat, lon)
-    @lat = lat
-    @lon = lon
+  def initialize(location)
+    @lat = lat_lon(location).lat
+    @lon = lat_lon(location).lon
     @service = WeatherService.new
+  end
+
+  def lat_lon(location)
+    MapQuestFacade.new(location).lat_long
   end
 
   def response_forecast
@@ -17,14 +20,14 @@ class ForecastFacade
   end
 
   def forecast_condensed(travel_time)
-    time = (Time.parse(travel_time) + 1800).to_s
-    date_time = DateTime.parse(time).beginning_of_hour
-
-    final_time = date_time.strftime("%k").to_i
-    forecast_info = response_forecast[:hourly][(final_time - 1)]
+    forecast_info = response_forecast[:hourly][(hour_selection(travel_time) - 1)]
 
     ForecastCondensed.new(forecast_info)
   end
+
+  def hour_selection(travel_time)
+    (Time.parse(travel_time) + 1800).beginning_of_hour.strftime("%k").to_i
+  end 
 
   def current_forecast
     current_forecast_info = response_forecast[:current]

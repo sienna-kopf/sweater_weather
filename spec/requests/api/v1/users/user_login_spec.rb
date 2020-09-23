@@ -72,17 +72,20 @@ RSpec.describe 'User Login Endpoint' do
         post "/api/v1/sessions", params: JSON.generate(body), headers: headers
 
         expect(response.content_type).to eq("application/json")
+        expect(response.status).to eq(400)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(error_response).to be_a Hash
-        expect(error_response).to have_key :errors
-        expect(error_response[:errors]).to be_a Hash
-        expect(error_response[:errors]).to have_key :status
-        expect(error_response[:errors][:status]).to eq(400)
-        expect(error_response[:errors]).to have_key :error_messages
-        expect(error_response[:errors][:error_messages]).to be_an Array
-        expect(error_response[:errors][:error_messages]).to include("credentials are bad")
+        expect(error_response).to have_key :data
+        expect(error_response[:data]).to have_key :id
+        expect(error_response[:data][:id]).to eq(nil)
+        expect(error_response[:data]).to have_key :type
+        expect(error_response[:data][:type]).to eq("errors")
+        expect(error_response[:data]).to have_key :attributes
+        expect(error_response[:data][:attributes]).to be_a Hash
+        expect(error_response[:data][:attributes]).to have_key :error_messages
+        expect(error_response[:data][:attributes][:error_messages]).to eq("credentials are bad")
       end
     end
   end
