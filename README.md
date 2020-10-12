@@ -35,7 +35,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 ```
-OPEN_WEATHER_API_KEY: <insert>
+OPEN_WEATHER_API_KEY: "<insert>"
 ```
 
 Sign up for the following API: </br>
@@ -43,7 +43,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 ```
-PIXABAY_API_KEY: <insert>
+PIXABAY_API_KEY: "<insert>"
 ```
 
 Sign up for the following API: </br>
@@ -51,7 +51,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 ```
-MAP_QUEST_API_KEY: <insert>
+MAP_QUEST_API_KEY: "<insert>"
 ```
 
 Sign up for the following API: </br>
@@ -59,7 +59,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 ```
-MOUNTAIN_PROJECT_API_KEY: <insert>
+MOUNTAIN_PROJECT_API_KEY: "<insert>"
 ```
 
 ## Endpoint use:
