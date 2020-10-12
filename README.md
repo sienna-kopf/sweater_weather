@@ -134,6 +134,7 @@ This endpoint also has sad paths built to send a 401 Unathorized status code if 
 ### Screen Cast of all Endpoints:
 
 Below a screen cast is attached running through all the endpoints of the project:
+[<img width="1075" alt="Screen Shot 2020-10-12 at 1 45 27 PM" src="https://user-images.githubusercontent.com/62857073/95784521-3988f400-0c91-11eb-8da0-553166c1b1d9.png">](https://vimeo.com/user124948662/review/467485943/1f9675414d)
 
 ## Testing: 
 
