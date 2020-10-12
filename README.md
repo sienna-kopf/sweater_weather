@@ -20,7 +20,7 @@ Based upon wireframe guidelines and example payloads for a fake weather and acti
 
 ## Setup
 #### Application:
-- clone and setup sweater_weather locally 
+- clone and setup `sweater_weather` locally 
    - `bundle install`
    - `rails db: create`
    - `rails db: migrate`
@@ -35,7 +35,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 </br>
-OPEN_WEATHER_API_KEY: '<insert>' </br>
+OPEN_WEATHER_API_KEY: "<insert>" </br>
 </br>
 
 Sign up for the following API: </br>
@@ -43,7 +43,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 </br>
-PIXABAY_API_KEY: '<insert>' </br>
+PIXABAY_API_KEY: "<insert>" </br>
 </br>
 
 Sign up for the following API: </br>
@@ -51,7 +51,7 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 </br>
-MAP_QUEST_API_KEY: '<insert>' </br>
+MAP_QUEST_API_KEY: "<insert>" </br>
 </br>
 
 Sign up for the following API: </br>
@@ -59,19 +59,19 @@ Sign up for the following API: </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
 </br>
-MOUNTAIN_PROJECT_API_KEY: '<insert>' </br>
+MOUNTAIN_PROJECT_API_KEY: "<insert>" </br>
 </br>
 
 ## Endpoint use:
 
-[Postman](https://www.postman.com/downloads/) is recommended, but any API platform that allows you to run enpoint queries with query params, body, and headers will do! </br>
+[Postman](https://www.postman.com/downloads/) is recommended, but any API platform that allows you to run enpoint queries with query params and a request body will do! </br>
 
-In `sweater_weather` run `rails s` to start the server. This will give you a port URL something like `http://localhost:3000` which is the main URI path for all the endpoint queries. In your API platform, the base URL will look like `http://localhost:3000/api/vi/<endpoint>` because all current endpoints are part of the first version of the API, and are therefore namespaced as such. </br>
+In `sweater_weather` run `rails s` to start the server. This will give you a port URL, something like `http://localhost:3000`, which is the main URI path for all the endpoint queries. In your API platform, the base URL will look like `http://localhost:3000/api/v1/<endpoint>` because all current endpoints are part of the first version of the API, and are therefore namespaced as such. </br>
 
 ### Example 1: 
 #### Weather Endpoint (no body)
 
-To run the `forecast` endpoint, the URL in your API platform would look like `http://localhost:3000/api/vi/forecast` and the query parameter you would include/append is `location=<city, state code>` something like "denver, co". The method for this endpoint is a `GET` which should also be set before running in the API platform.
+To run the `forecast` endpoint, the URL in your API platform would look like `http://localhost:3000/api/v1/forecast` and the query parameter you would include/append is `location=<city, state code>` something like "denver, co". The method for this endpoint is a `GET` which should also be set before running in the API platform.
 
 In Postman, the setup for this endpoint looks like:
 <img width="813" alt="Screen Shot 2020-10-12 at 12 53 05 PM" src="https://user-images.githubusercontent.com/62857073/95781095-5c63da00-0c8a-11eb-811a-2f73ff6180d0.png">
@@ -89,7 +89,7 @@ Filtering the attributes included in each response based upon the wireframe for 
 ### Example 2: 
 #### User Registration (with Body): 
 
-To run the `users` endpoint, the URL in your API platform would look like `http://localhost:3000/api/vi/users` with the method set to `POST`. For this endpoint, we also need to send a request body with the users email, password, and password confirmation. In Postman, we will include this information as JSON under the body tab like this: 
+To run the `users` endpoint, the URL in your API platform would look like `http://localhost:3000/api/v1/users` with the method set to `POST`. For this endpoint, we also need to send a request body with the users email, password, and password confirmation. In Postman, we will include this information as JSON under the body tab like this: 
 <img width="817" alt="Screen Shot 2020-10-12 at 1 07 03 PM" src="https://user-images.githubusercontent.com/62857073/95781834-d779c000-0c8b-11eb-82bf-72df9cf55fad.png">
 
 When run, the endpoint will return a JSON 1.0 standard response that includes the new users id, email, and an randomly generated api_key to handle authentication. This response looks like this: 
@@ -106,7 +106,7 @@ These sad paths are important catches in making sure that the application is use
 ### Example 3:
 #### Road Trip (Body with authentication, and data synthesis):
 
-To run the `road_trip` endpoint, the URL in your API platform would look like `http://localhost:3000/api/vi/road_trip` with the method set to `POST`. For this endpoint, we also need to send a request body with a origin, destination, and authenticated users unique api_key. In Postman, we will include this information as JSON under the body tab like this: 
+To run the `road_trip` endpoint, the URL in your API platform would look like `http://localhost:3000/api/v1/road_trip` with the method set to `POST`. For this endpoint, we also need to send a request body with a origin, destination, and authenticated users unique api_key. In Postman, we will include this information as JSON under the body tab like this: 
 <img width="808" alt="Screen Shot 2020-10-12 at 1 15 41 PM" src="https://user-images.githubusercontent.com/62857073/95782410-14928200-0c8d-11eb-9842-c25f3086d9e0.png">
 
 When run, the endpoint will return a standard JSON 1.0 response that synthesizes the following information per the [project specs](https://backend.turing.io/module3/projects/sweater_weather/requirements):
