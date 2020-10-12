@@ -34,33 +34,33 @@ Sign up for the following API: </br>
 [OpenWeather](https://home.openweathermap.org/users/sign_up)</br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
-</br>
-OPEN_WEATHER_API_KEY: "<insert>" </br>
-</br>
+```
+OPEN_WEATHER_API_KEY: <insert>
+```
 
 Sign up for the following API: </br>
 [Pixabay](https://pixabay.com/accounts/register/?source=main_nav)</br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
-</br>
-PIXABAY_API_KEY: "<insert>" </br>
-</br>
+```
+PIXABAY_API_KEY: <insert>
+```
 
 Sign up for the following API: </br>
 [MapQuest](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)</br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
-</br>
-MAP_QUEST_API_KEY: "<insert>" </br>
-</br>
+```
+MAP_QUEST_API_KEY: <insert>
+```
 
 Sign up for the following API: </br>
 [Mountain Project](https://www.mountainproject.com/) and click `Sign Up` </br>
 Add the following code snippet to your `/config/application.yml` file.      </br> 
 Make sure to insert the key without the alligator clips ( < > ).</br>
-</br>
-MOUNTAIN_PROJECT_API_KEY: "<insert>" </br>
-</br>
+```
+MOUNTAIN_PROJECT_API_KEY: <insert>
+```
 
 ## Endpoint use:
 
