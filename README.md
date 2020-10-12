@@ -78,8 +78,10 @@ In Postman, the setup for this endpoint looks like:
 
 When run, the response returns the current weather:
 <img width="692" alt="Screen Shot 2020-10-12 at 12 54 00 PM" src="https://user-images.githubusercontent.com/62857073/95781147-77364e80-0c8a-11eb-9f5e-8d3088edd68e.png">
+</br>
 Eight hours worth of hourly forecast:
 <img width="693" alt="Screen Shot 2020-10-12 at 12 54 13 PM" src="https://user-images.githubusercontent.com/62857073/95781214-92a15980-0c8a-11eb-9ba1-59331d04f7cd.png">
+</br>
 And six days worth of daily forecast: 
 <img width="692" alt="Screen Shot 2020-10-12 at 12 54 30 PM" src="https://user-images.githubusercontent.com/62857073/95781261-a8168380-0c8a-11eb-9879-384f8baaabe6.png">
 
