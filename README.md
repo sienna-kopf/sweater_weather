@@ -1,6 +1,6 @@
 # Sweater Weather
 
-The final project of the third quarter (Mod 3) of the [Turing School](https://turing.io/). Five-day duration, sole contributor.
+The final project of the third quarter (Mod 3) of the [Turing School](https://turing.io/)--five-day duration.
 
 ## Overview
 Based upon wireframe guidelines and example payloads for a fake weather and activity planning site ([project specs](https://backend.turing.io/module3/projects/sweater_weather/requirements)), endpoints for complex weather data, user authentication and authorization, and climbing and road trip activity planning were built out by interacting with the MapQuest, Mountain Project, Pixabay, and Open Weather APIs.
